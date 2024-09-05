@@ -46,16 +46,26 @@ class TicTacToeGUI:
         self.status_label = tk.Label(self.root, text='Current player: ' + self.game.current_player)
         self.status_label.grid(row=3, column=0, columnspan=3)
 
+        self.restart_button = tk.Button(self.root, text='Restart Game', command=self.restart_game)
+        self.restart_button.grid(row=4, column=0, columnspan=3)
+
         self.root.mainloop()
 
     def button_click(self, row, col):
-        self.game.play(row, col)
-        if self.game.board[row][col] != '':
+        if self.game.board[row][col] == '' and not self.game.game_over:
+            self.game.play(row, col)
             self.buttons[row][col].config(text=self.game.board[row][col])
-        if self.game.game_over:
-            self.status_label.config(text='Game over! Winner: ' + self.game.current_player)
-        else:
-            self.status_label.config(text='Current player: ' + self.game.current_player)
+            if self.game.game_over:
+                self.status_label.config(text='Game over! Winner: ' + self.game.current_player)
+            else:
+                self.status_label.config(text='Current player: ' + self.game.current_player)
+
+    def restart_game(self):
+        self.game = TicTacToe()
+        for row in self.buttons:
+            for button in row:
+                button.config(text='', state=tk.NORMAL)
+        self.status_label.config(text='Current player: ' + self.game.current_player)
 
 if __name__ == '__main__':
     TicTacToeGUI()
