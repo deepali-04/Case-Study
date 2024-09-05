@@ -46,6 +46,33 @@ test_check_winner_diagonal: Tests a winning scenario on a diagonal.
 
 test_no_winner: Tests a scenario where no one wins after all spots are filled.
 
+## GitHub Actions Workflow
+To ensure code quality and streamline development, this project utilizes GitHub Actions for Continuous Integration (CI). The workflow is defined in the .github/workflows/python-application.yml file and performs the following steps:
+
+### Workflow Triggers
+Push: The workflow triggers on pushes to the main branch.
+
+Pull Request: It also runs on pull requests targeting the main branch.
+
+### Workflow Details
+Permissions: The workflow has read access to the repository contents.
+
+### Jobs
+
+Build: Runs on the latest Ubuntu environment.
+
+Checkout: Checks out the code from the repository.
+
+Setup Python: Configures Python 3.10.
+
+Install Dependencies: Upgrades pip, installs flake8 for linting and pytest for testing, and installs additional dependencies from requirements.txt if present.
+
+Linting: Runs flake8 to check for code issues, reporting errors and treating non-critical issues as warnings.
+
+Testing: Executes tests using pytest and displays results in verbose mode.
+
+This CI setup helps maintain code quality and reliability by automatically checking for issues and running tests on every code change.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
