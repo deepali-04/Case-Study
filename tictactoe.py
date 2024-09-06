@@ -3,6 +3,7 @@ def print_board(board):
         print(" | ".join(row))
         print("-" * 5)
 
+#tests
 def check_winner(board, player):
     win_conditions = [
         [board[0][0], board[0][1], board[0][2]],
