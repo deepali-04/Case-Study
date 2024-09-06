@@ -28,23 +28,6 @@ TicTacToe.py: Contains the main game logic and GUI implementation.
 
 test_tictactoe.py: Contains the unit tests for the TicTacToe class.
 
-## Unit Tests
-
-The project includes a set of unit tests to verify the core game logic:
-
-test_initial_state: Verifies the initial state of the game.
-
-test_play_valid_move: Ensures that a valid move updates the board and switches the player.
-
-test_play_invalid_move: Ensures that attempting to play on an occupied spot does not change the board or the current player.
-
-test_check_winner_row: Tests a winning scenario in a row.
-
-test_check_winner_column: Tests a winning scenario in a column.
-
-test_check_winner_diagonal: Tests a winning scenario on a diagonal.
-
-test_no_winner: Tests a scenario where no one wins after all spots are filled.
 
 ## GitHub Actions Workflow
 To ensure code quality and streamline development, this project utilizes GitHub Actions for Continuous Integration (CI). The workflow is defined in the .github/workflows/python-application.yml file and performs the following steps:
