@@ -1,5 +1,5 @@
-
 import unittest
+from tictactoe import check_winner  # Import the function from your main file
 
 class TestTicTacToe(unittest.TestCase):
     def test_check_winner(self):
@@ -22,5 +22,3 @@ class TestTicTacToe(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-    
